@@ -8,14 +8,16 @@
             </h1>
 
             <?php
-                // Instanciate user class
-                $user = new User();
-                // User method find all users
-                $result_set = $user->find_all_users();
+                // User static method find all users
+                $result_set = User::find_all_users();
                 //Loop through the users
                 while($row = mysqli_fetch_array($result_set)) {
                     echo $row['username'] . "<br>";
                 }
+
+                // User static method find all users
+                $found_user = User::find_user_by_id(2);
+                echo $found_user['first_name'];
             ?>
 
             <ol class="breadcrumb">
