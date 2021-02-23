@@ -8,17 +8,14 @@
             </h1>
 
             <?php
-                if($database->connection){
-                    echo "true";
+                // Instanciate user class
+                $user = new User();
+                // User method find all users
+                $result_set = $user->find_all_users();
+                //Loop through the users
+                while($row = mysqli_fetch_array($result_set)) {
+                    echo $row['username'] . "<br>";
                 }
-                //Query
-                $sql = "SELECT * FROM users WHERE id=1";
-                //Query method from database class
-                $result =  $database->query($sql);
-                //Fetching the result and storing into user_found
-                $user_found = mysqli_fetch_array($result);
-                //printing the result
-                echo $user_found['username'];
             ?>
 
             <ol class="breadcrumb">
