@@ -16,7 +16,7 @@
                 }
 
                 // User static method find all users
-                $found_user = User::find_user_by_id(2);
+                $found_user = User::find_user_by_id(1);
                 echo $found_user['first_name'];
             ?>
 
