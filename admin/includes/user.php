@@ -26,6 +26,28 @@ class User {
         return $result_set;
     }
 
+    public static function instantiation($the_record){
+        $user_object = new self;
+        // $user_object->id = $found_user['id'];
+        // $user_object->username = $found_user['username'];
+        // $user_object->password = $found_user['password'];
+        // $user_object->first_name = $found_user['first_name'];
+        // $user_object->last_name = $found_user['last_name'];
+
+        foreach ($the_record as $the_attribute => $value) {
+            if($user_object->has_the_attribute($the_attribute)){
+                $user_object->$the_attribute = $value;
+                }
+            }
+        return $user_object;
+    }
+
+    private function has_the_attribute($the_attribute){
+        $object_properties = get_object_vars($this);
+        // Check whether attribute exists in output array
+        return array_key_exists($the_attribute, $object_properties);
+    }
+
 }
 
 
