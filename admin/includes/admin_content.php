@@ -7,11 +7,15 @@
                 <small>Subheading</small>
             </h1>
 
-            <!-- Database connection from database.php -->
             <?php
-                if($database->connection){
-                echo "true";  
-                    }
+                //Query
+                $sql = "SELECT * FROM users WHERE id=1";
+                //Query method from database class
+                $result =  $database->query($sql);
+                //Fetching the result and storing into user_found
+                $user_found = mysqli_fetch_array($result);
+                //printing the result
+                echo $user_found['username'];
             ?>
 
             <ol class="breadcrumb">
