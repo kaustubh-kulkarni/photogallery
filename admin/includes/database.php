@@ -21,11 +21,19 @@ class Database {
     public function query($sql) {
         //first parameter is connection and second will be query
         $result = mysqli_query($this->connection, $sql);
+    
+        return $result;
+    }
+    //This function is just to save some time
+    private function confirm_query($result){
         if(!$result){
             die("Query failed!");
         }
+    }
 
-        return $result;
+    public function escape_string($string){
+        $escaped_string = mysqli_real_escape_string($this->connection, $string);
+        return $escaped_string;
     }
 
 }
