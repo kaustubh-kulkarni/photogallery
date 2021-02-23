@@ -17,7 +17,15 @@
 
                 // User static method find all users
                 $found_user = User::find_user_by_id(1);
-                echo $found_user['first_name'];
+                //Instanciation
+                $user = new User();
+                $user->id = $found_user['id'];
+                $user->username = $found_user['username'];
+                $user->password = $found_user['password'];
+                $user->first_name = $found_user['first_name'];
+                $user->last_name = $found_user['last_name'];
+
+                echo $user->id;
             ?>
 
             <ol class="breadcrumb">
