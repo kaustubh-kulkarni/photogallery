@@ -17,6 +17,16 @@ class Database {
             die("Database connection failed" . mysqli_error($this->connection));
         }
     }
+    //sql is variable to call query from
+    public function query($sql) {
+        //first parameter is connection and second will be query
+        $result = mysqli_query($this->connection, $sql);
+        if(!$result){
+            die("Query failed!");
+        }
+
+        return $result;
+    }
 
 }
 //Variable to access Database class
