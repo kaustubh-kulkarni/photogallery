@@ -8,6 +8,9 @@
             </h1>
 
             <?php
+                if($database->connection){
+                    echo "true";
+                }
                 //Query
                 $sql = "SELECT * FROM users WHERE id=1";
                 //Query method from database class
