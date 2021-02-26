@@ -5,6 +5,7 @@ class Session {
 
     private $signed_in = false;
     public $user_id;
+    public $message;
 
 //Instantiation
 function __construct()
@@ -12,7 +13,28 @@ function __construct()
     //Start the session
     session_start();
     $this->check_the_login();
+    $this->check_message();
 }
+//Method for message
+public function message($msg=""){
+    if(!empty($msg)){
+        $_SESSION['message'] = $msg;
+    } else {
+        return $this->message;
+    }
+
+}
+
+//Method to check message
+private function check_message(){
+    if(isset($_SESSION['message'])){
+        $this->message = $_SESSION['message'];
+        unset($_SESSION['message']);
+    } else {
+        $this->message = "";
+    }
+}
+
 
 //Get value from class and check(Getter function)
 public function is_signed_in(){
