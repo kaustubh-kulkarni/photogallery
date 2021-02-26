@@ -36,6 +36,13 @@ class User {
         return $user_object_array;
     }
 
+    public static function verify_user($username, $password){
+        global $database;
+
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+    }
+
     public static function instantiation($the_record){
         $user_object = new self;
         // $user_object->id = $found_user['id'];
