@@ -6,20 +6,19 @@
                 Blank Page
                 <small>Subheading</small>
             </h1>
-
             <?php
-                // // User static method find all users
+                //User static method find all users
                 // $result_set = User::find_all_users();
-                // //Loop through the users
+                //Loop through the users
                 // while($row = mysqli_fetch_array($result_set)) {
                 //     echo $row['username'] . "<br>";
                 // }
 
-                // // User static method find all users
+                //User static method find all users
                 // $found_user = User::find_user_by_id(1);
 
                 // $user = User::instantiation($found_user);
-                // //Instanciation
+                //Instanciation
                 // echo $user->password;
                 // echo "<br>";
 
@@ -29,13 +28,13 @@
                 //     echo $user->id . "<br>";
                 // }
 
-                $found_user = User::find_user_by_id(1);
-                echo $found_user->username;
+                // $found_user = User::find_user_by_id(1);
+                // echo $found_user->username;
             ?>
 
             <ol class="breadcrumb">
                 <li>
-                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                    <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
                 </li>
                 <li class="active">
                     <i class="fa fa-file"></i> Blank Page
