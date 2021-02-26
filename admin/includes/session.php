@@ -3,7 +3,7 @@
 //This class is available everytime the application is on
 class Session {
 
-    private $signed_in;
+    private $signed_in = false;
     public $user_id;
 
 //Instantiation
@@ -11,6 +11,21 @@ function __construct()
 {
     //Start the session
     session_start();
+    $this->check_the_login();
+}
+
+//Get value from class and check(Getter function)
+public function is_signed_in(){
+    return $this->signed_in;
+}
+
+//Function to login the user
+public function login($user){
+    if($user){
+        //Get user_id from session and assign it to user
+        $this->user_id = $_SESSION['user_id'] = $user->id;
+    }
+
 }
 
 private function check_the_login(){
