@@ -7,29 +7,14 @@
                 <small>Subheading</small>
             </h1>
             <?php
-                //User static method find all users
-                // $result_set = User::find_all_users();
-                //Loop through the users
-                // while($row = mysqli_fetch_array($result_set)) {
-                //     echo $row['username'] . "<br>";
-                // }
+               $user = new User();
 
-                //User static method find all users
-                // $found_user = User::find_user_by_id(1);
+               $user->username = "Dhanashree";
+               $user->password = "123";
+               $user->first_name = "Dhanashree";
+               $user->last_name = "Awadhani";
 
-                // $user = User::instantiation($found_user);
-                //Instanciation
-                // echo $user->password;
-                // echo "<br>";
-
-                // $users = User::find_all_users();
-
-                // foreach ($users as $user) {
-                //     echo $user->id . "<br>";
-                // }
-
-                // $found_user = User::find_user_by_id(1);
-                // echo $found_user->username;
+               $user->create();
             ?>
 
             <ol class="breadcrumb">
