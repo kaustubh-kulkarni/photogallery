@@ -68,6 +68,11 @@ class User {
         // Check whether attribute exists in output array
         return array_key_exists($the_attribute, $object_properties);
     }
+    //To check if the user exists or not
+    public function save() {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+        
 
     public function create() {
         global $database;

@@ -21,8 +21,9 @@
 
             // $user->update();
 
-            $user = User::find_user_by_id(5);
-            $user->delete();
+            $user = User::find_user_by_id(6);
+            $user->password = "dhanashree";
+            $user->save();
 
             ?>
 
