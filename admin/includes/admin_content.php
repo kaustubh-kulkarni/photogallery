@@ -7,14 +7,14 @@
                 <small>Subheading</small>
             </h1>
             <?php
-            //    $user = new User();
+               $user = new User();
 
-            //    $user->username = "Dhanashree";
-            //    $user->password = "123";
-            //    $user->first_name = "Dhanashree";
-            //    $user->last_name = "Awadhani";
+               $user->username = "Dhanashree";
+               $user->password = "123";
+               $user->first_name = "Dhanashree";
+               $user->last_name = "Awadhani";
 
-            //    $user->create();
+               $user->create();
 
             // $user = User::find_user_by_id(2);
             // $user->last_name = "Williams";
@@ -24,8 +24,8 @@
             // $user = User::find_user_by_id(6);
             // $user->password = "dhanashree";
             // $user->save();
-            $user = User::find_user_by_id(6);
-            $user->delete();
+            // $user = User::find_user_by_id(6);
+            // $user->delete();
             ?>
 
             <ol class="breadcrumb">

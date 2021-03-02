@@ -74,7 +74,7 @@ class User {
         $properties = array();
         foreach (self::$db_table_fields as $db_field) {
             if(property_exists($this, $db_field)){
-                $properties['$db_field'] = $this->db_field;
+                $properties[$db_field] = $this->$db_field;
             }
         }
         return $properties;
@@ -86,13 +86,13 @@ class User {
         return isset($this->id) ? $this->update() : $this->create();
     }
         
-
+    //To create users
     public function create() {
         global $database;
 
         $properties = $this->properties();
         //Imploding the keys of the array
-        $sql = "INSERT INTO". self::$db_table . "(" . implode(",", array_keys($properties)) .")";
+        $sql = "INSERT INTO ". self::$db_table . "(" . implode(",", array_keys($properties)) .")";
         $sql .= "VALUES ('". implode("','", array_values($properties))  ."')";
       
 
@@ -106,15 +106,17 @@ class User {
         
 
     }
-
+    //To update users
     public function update(){
         global $database;
+        $properties = $this->properties();
+        $properties_pairs = array();
+        foreach ($properties as $key => $value) {
+            $properties_pairs[] = "{$key}='{$value}'";
+        }
         //Updating the database
         $sql = "UPDATE ". self::$db_table . " SET ";
-        $sql .= "username= '" . $database->escape_string($this->username) . "', ";
-        $sql .= "password= '" . $database->escape_string($this->password) . "', ";
-        $sql .= "first_name= '" . $database->escape_string($this->first_name) . "', ";
-        $sql .= "last_name= '" . $database->escape_string($this->last_name) . "' ";
+        $sql .= implode(", ", $properties_pairs);
         $sql .= " WHERE id= " . $database->escape_string($this->id);
 
         $database->query($sql);
