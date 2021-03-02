@@ -86,11 +86,8 @@ class User {
         $properties = $this->properties();
         //Imploding the keys of the array
         $sql = "INSERT INTO". self::$db_table . "(" . implode(",", array_keys($properties)) .")";
-        $sql .= "VALUES ('";
-        $sql .= $database->escape_string($this->username) . "', '";
-        $sql .= $database->escape_string($this->password) . "', '";
-        $sql .= $database->escape_string($this->first_name) . "', '";
-        $sql .= $database->escape_string($this->last_name) . "')";
+        $sql .= "VALUES ('". implode("','", array_values($properties))  ."')";
+      
 
         if($database->query($sql)){
             $this->id = $database->the_insert_id();
