@@ -68,6 +68,12 @@ class User {
         // Check whether attribute exists in output array
         return array_key_exists($the_attribute, $object_properties);
     }
+
+    protected function properties(){
+        return get_object_vars($this);
+    }
+
+
     //To check if the user exists or not
     public function save() {
         return isset($this->id) ? $this->update() : $this->create();
@@ -77,7 +83,9 @@ class User {
     public function create() {
         global $database;
 
-        $sql = "INSERT INTO". self::$db_table . " (username, password, first_name, last_name)";
+        $properties = $this->properties();
+        //Imploding the keys of the array
+        $sql = "INSERT INTO". self::$db_table . "(" . implode(",", array_keys($properties)) .")";
         $sql .= "VALUES ('";
         $sql .= $database->escape_string($this->username) . "', '";
         $sql .= $database->escape_string($this->password) . "', '";
