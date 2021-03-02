@@ -21,10 +21,11 @@
 
             // $user->update();
 
+            // $user = User::find_user_by_id(6);
+            // $user->password = "dhanashree";
+            // $user->save();
             $user = User::find_user_by_id(6);
-            $user->password = "dhanashree";
-            $user->save();
-
+            $user->delete();
             ?>
 
             <ol class="breadcrumb">
