@@ -7,14 +7,12 @@
                 <small>Subheading</small>
             </h1>
             <?php
-               $user = new User();
+               $photo = new Photo();
 
-               $user->username = "ABC";
-               $user->password = "123";
-               $user->first_name = "ABC";
-               $user->last_name = "ROG";
+               $photo->title = "Testing photo title";
+               $photo->size = 20;
 
-               $user->create();
+               $photo->create();
 
             // $user = User::find_user_by_id(7);
             // $user->last_name = "Williams";
@@ -26,9 +24,9 @@
             // $user->save();
             // $user = User::find_user_by_id(6);
             // $user->delete();
-            $users = User::find_all();
-            foreach ($users as $user) {
-                echo $user->username . "<br>";
+            $photos = Photo::find_all();
+            foreach ($photos as $photo) {
+                echo $photo->title . "<br>";
             }
             ?>
 
