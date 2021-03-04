@@ -7,12 +7,12 @@
                 <small>Subheading</small>
             </h1>
             <?php
-               $photo = new Photo();
+            //    $photo = new Photo();
 
-               $photo->title = "Testing photo title";
-               $photo->size = 20;
+            //    $photo->title = "Testing photo title";
+            //    $photo->size = 20;
 
-               $photo->create();
+            //    $photo->create();
 
             // $user = User::find_user_by_id(7);
             // $user->last_name = "Williams";
@@ -24,10 +24,12 @@
             // $user->save();
             // $user = User::find_user_by_id(6);
             // $user->delete();
-            $photos = Photo::find_all();
-            foreach ($photos as $photo) {
-                echo $photo->title . "<br>";
-            }
+            // $photos = Photo::find_all();
+            // foreach ($photos as $photo) {
+            //     echo $photo->title . "<br>";
+            // }
+
+            echo INCLUDES_PATH;
             ?>
 
             <ol class="breadcrumb">
