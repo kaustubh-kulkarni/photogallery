@@ -26,6 +26,10 @@
             // $user->save();
             // $user = User::find_user_by_id(6);
             // $user->delete();
+            $users = User::find_all();
+            foreach ($users as $user) {
+                echo $user->username . "<br>";
+            }
             ?>
 
             <ol class="breadcrumb">
