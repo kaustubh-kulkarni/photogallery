@@ -45,6 +45,10 @@ class Photo extends Db_object {
         
     }
 
+    public function picture_path() {
+        return $this->upload_directory.DS.$this->filename;
+    }
+
     //Function to save the uploaded photo
     public function save() {
         //Error checking

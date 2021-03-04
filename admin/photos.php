@@ -39,7 +39,7 @@ $photos = Photo::find_all();
 
                             <?php foreach ($photos as $photo) : ?>
                             <tr>
-                                <td><img src="http://placehold.it/62x62" alt=""></td>
+                                <td><img src="<?php echo $photo->picture_path(); ?>" width="250px" height="150px" alt=""></td>
                                 <td><?php echo $photo->photo_id;   ?></td>
                                 <td><?php echo $photo->filename;   ?></td>
                                 <td><?php echo $photo->title;   ?></td>
