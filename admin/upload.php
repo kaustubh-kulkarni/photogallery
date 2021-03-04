@@ -2,6 +2,24 @@
 <?php //If user is not signed in 
 if(!$session -> is_signed_in()){redirect("login.php");}?>
 
+<?php
+
+$message = "";
+if(isset($_POST['submit'])){
+    $photo = new Photo();
+    $photo->title = $_POST['title'];
+    $photo->set_file($_FILES['file_upload']);
+
+    if($photo->save()) {
+        $message = "Photo uploaded successfully";
+    } else {
+        $message = join("<br>", $photo->errors);
+    }
+}
+
+
+?>
+
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -21,6 +39,7 @@ if(!$session -> is_signed_in()){redirect("login.php");}?>
                 
                 <!-- Form to POST or upload photos -->
                 <div class="col-md-6">
+                <?php echo $message ?>
                 <form action="upload.php" method="POST" enctype="multipart/form-data">
                 
                 <div class="form-group">
