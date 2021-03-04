@@ -45,6 +45,29 @@ class Photo extends Db_object {
         
     }
 
+    //Function to save the uploaded photo
+    public function save() {
+        //Error checking
+        if($this->photo_id){
+            $this->update();
+        } else {
+            if(!empty($this->errors)){
+                return false;
+            }
+            if(empty($this->filename) || empty($this->tmp_path)) {
+                $this->errors[] = "The file was not available";
+                return false;
+            }
+
+
+
+            $this->create();
+        }
+
+
+
+    }
+
 }
 
 
