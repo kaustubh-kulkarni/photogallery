@@ -7,14 +7,14 @@
                 <small>Subheading</small>
             </h1>
             <?php
-            //    $user = new User();
+               $user = new User();
 
-            //    $user->username = "ABC";
-            //    $user->password = "123";
-            //    $user->first_name = "ABC";
-            //    $user->last_name = "ROG";
+               $user->username = "ABC";
+               $user->password = "123";
+               $user->first_name = "ABC";
+               $user->last_name = "ROG";
 
-            //    $user->create();
+               $user->create();
 
             // $user = User::find_user_by_id(7);
             // $user->last_name = "Williams";
