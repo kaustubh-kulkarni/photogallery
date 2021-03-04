@@ -10,13 +10,13 @@ class User {
     public $last_name;
 
     //Method to find all users
-    public static function find_all_users(){
-       return self::find_this_query("SELECT * FROM users");
+    public static function find_all(){
+       return self::find_this_query("SELECT * FROM " . self::$db_table . "");
     }
     //Method to find user by ID
-    public static function find_user_by_id($user_id){
+    public static function find_by_id($user_id){
         global $database;
-        $the_result_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
+        $the_result_array = self::find_this_query("SELECT * FROM " . self::$db_table . " WHERE id=$user_id LIMIT 1");
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
     //Simplified query strings
@@ -38,7 +38,7 @@ class User {
         $username = $database->escape_string($username);
         $password = $database->escape_string($password);
         //Getting username and pass from DB
-        $sql = "SELECT * FROM users WHERE ";
+        $sql = "SELECT * FROM " . self::$db_table . "WHERE ";
         $sql .= "username = '{$username}' ";
         $sql .= "AND password = '{$password}' ";
         $sql .= "LIMIT 1";

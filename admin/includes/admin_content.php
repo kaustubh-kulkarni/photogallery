@@ -9,17 +9,17 @@
             <?php
             //    $user = new User();
 
-            //    $user->username = "Dhanashree";
+            //    $user->username = "ABC";
             //    $user->password = "123";
-            //    $user->first_name = "Dhanashree";
-            //    $user->last_name = "Awadhani";
+            //    $user->first_name = "ABC";
+            //    $user->last_name = "ROG";
 
             //    $user->create();
 
-            $user = User::find_user_by_id(7);
-            $user->last_name = "Williams";
+            // $user = User::find_user_by_id(7);
+            // $user->last_name = "Williams";
 
-            $user->update();
+            // $user->update();
 
             // $user = User::find_user_by_id(6);
             // $user->password = "dhanashree";
