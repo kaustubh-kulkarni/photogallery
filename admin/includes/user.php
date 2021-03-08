@@ -17,10 +17,7 @@ class User extends Db_object {
         $username = $database->escape_string($username);
         $password = $database->escape_string($password);
         //Getting username and pass from DB
-        $sql = "SELECT * FROM " . self::$db_table . "WHERE ";
-        $sql .= "username = '{$username}' ";
-        $sql .= "AND password = '{$password}' ";
-        $sql .= "LIMIT 1";
+        $sql = "SELECT * FROM " .self::$db_table. " WHERE username = '{$username}' AND password ='{$password}' LIMIT 1";
 
         $the_result_array = self::find_by_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
