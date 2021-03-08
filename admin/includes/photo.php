@@ -81,6 +81,16 @@ class Photo extends Db_object {
             }
         }
     }
+    //Delete file from database and from server
+    public function delete_photo(){
+        if($this->delete()) {
+            $target_path = SITE_ROOT. DS . 'admin' . DS . $this->picture_path();
+            //Unlink is predefined function in php which will delete the file
+            return unlink($target_path) ? true : false;   
+        } else {
+            return false;
+        }
+    }
 }
 
 

@@ -5,16 +5,17 @@ if(!$session -> is_signed_in()){redirect("login.php");}?>
 <?php
 
 //If not photo id then redirect
-if(empty($_GET['photo_id'])){
-    redirect("photos.php");
+if(empty($_GET['id'])){
+    redirect("../photos.php");
 }
 //Instanciate with Photo class
-$photo = Photo::find_by_id($_GET['photo_id']);
+$photo = Photo::find_by_id($_GET['id']);
 
 if($photo){
     $photo->delete_photo();
+    redirect("../photos.php");
 } else {
-    redirect("photos.php");
+    redirect("../photos.php");
 }
 
 ?>
