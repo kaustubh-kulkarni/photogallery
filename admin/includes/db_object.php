@@ -10,9 +10,9 @@ class Db_object {
         return static::find_by_query("SELECT * FROM " . static::$db_table . "");
      }
      //Method to find user by ID
-     public static function find_by_id($user_id){
+     public static function find_by_id($id){
          global $database;
-         $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$user_id LIMIT 1");
+         $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id LIMIT 1");
          return !empty($the_result_array) ? array_shift($the_result_array) : false;
      }
      //Simplified query strings
@@ -31,12 +31,6 @@ class Db_object {
     public static function instantiation($the_record){
         $calling_class = get_called_class();
         $user_object = new $calling_class;
-        // $user_object->id = $found_user['id'];
-        // $user_object->username = $found_user['username'];
-        // $user_object->password = $found_user['password'];
-        // $user_object->first_name = $found_user['first_name'];
-        // $user_object->last_name = $found_user['last_name'];
-
         foreach ($the_record as $the_attribute => $value) {
             if($user_object->has_the_attribute($the_attribute)){
                 $user_object->$the_attribute = $value;
