@@ -15,6 +15,8 @@ if (!$session->is_signed_in()) {
             $photo->caption = $_POST['caption'];
             $photo->description = $_POST['description'];
             $photo->alternate_text = $_POST['alternate_text'];
+
+            $photo->save();
         }   
     }
  }
@@ -43,7 +45,7 @@ if (!$session->is_signed_in()) {
                 </h1>
 
                 <!-- Form control -->
-                <form action="edit_photo.php" method="POST">
+                <form action="" method="POST">
                 <div class="col-md-8">
                     <div class="form-group">
                         <input type="text" name="title" class="form-control" value="<?php echo $photo->title ?>">
@@ -58,7 +60,7 @@ if (!$session->is_signed_in()) {
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="" id="description" cols="30" rows="10" >
+                        <textarea class="form-control" name="description" id="description" cols="30" rows="10" >
                             <?php echo $photo->description ?>
                         </textarea>
                     </div>
