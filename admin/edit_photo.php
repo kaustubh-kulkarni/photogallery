@@ -50,15 +50,17 @@ if (!$session->is_signed_in()) {
                     </div>
                     <div class="form-group">
                         <label for="caption">Caption</label>
-                        <input type="text" name="caption" class="form-control">
+                        <input type="text" name="caption" class="form-control"  value="<?php echo $photo->caption ?>">
                     </div>
                     <div class="form-group">
                         <label for="alternate_text">Alternate text</label>
-                        <input type="text" name="alternate_text" class="form-control">
+                        <input type="text" name="alternate_text" class="form-control"  value="<?php echo $photo->alternate_text ?>">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="" id="description" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" name="" id="description" cols="30" rows="10" >
+                            <?php echo $photo->description ?>
+                        </textarea>
                     </div>
                 </div>
 
