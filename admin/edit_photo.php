@@ -1,8 +1,12 @@
 <?php include("includes/header.php"); ?>
 <?php //If user is not signed in 
-if(!$session -> is_signed_in()){redirect("login.php");}?>
+if (!$session->is_signed_in()) {
+    redirect("login.php");
+} ?>
 <?php
+ if(isset($_POST['update'])){
 
+ }
 // $photos = Photo::find_all();
 
 ?>
@@ -22,8 +26,10 @@ if(!$session -> is_signed_in()){redirect("login.php");}?>
                     Photos
                     <small>Subheading</small>
                 </h1>
-                <!-- Table for uploaded images -->
-                <div class="col-md-12">
+
+                <!-- Form control -->
+                <form action="edit_photo.php" method="POST">
+                <div class="col-md-8">
                     <div class="form-group">
                         <input type="text" name="title" class="form-control">
                     </div>
@@ -32,15 +38,53 @@ if(!$session -> is_signed_in()){redirect("login.php");}?>
                         <input type="text" name="caption" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="caption">Alternate text</label>
+                        <label for="alternate_text">Alternate text</label>
                         <input type="text" name="alternate_text" class="form-control">
-                    </div>    
+                    </div>
                     <div class="form-group">
-                        <label for="caption">Description</label>
+                        <label for="description">Description</label>
                         <textarea class="form-control" name="" id="description" cols="30" rows="10"></textarea>
-                    </div>            
+                    </div>
                 </div>
+
+                <div class="col-md-4">
+                    <div class="photo-info-box">
+                        <div class="info-box-header">
+                            <h4>Save <span id="toggle" class="glyphicon glyphicon-menu-up pull-right"></span></h4>
+                        </div>
+                        <div class="inside">
+                            <div class="box-inner">
+                                <p class="text">
+                                    <span class="glyphicon glyphicon-calendar"></span> Uploaded on: April 22, 2030 @ 5:26
+                                </p>
+                                <p class="text ">
+                                    Photo Id: <span class="data photo_id_box">34</span>
+                                </p>
+                                <p class="text">
+                                    Filename: <span class="data">image.jpg</span>
+                                </p>
+                                <p class="text">
+                                    File Type: <span class="data">JPG</span>
+                                </p>
+                                <p class="text">
+                                    File Size: <span class="data">3245345</span>
+                                </p>
+                            </div>
+                            <div class="info-box-footer clearfix">
+                                <div class="info-box-delete pull-left">
+                                    <a href='delete_photo.php?id="<?php echo $photo->id; ?>"' class="btn btn-danger btn-lg">Delete</a>
+                                </div>
+                                <div class="info-box-update pull-right ">
+                                    <input type="submit" name="update" value="Update" class="btn btn-primary btn-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
                 
+
+
             </div>
         </div>
         <!-- /.row -->
