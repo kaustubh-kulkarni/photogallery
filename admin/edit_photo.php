@@ -11,10 +11,10 @@ if (!$session->is_signed_in()) {
      $photo = Photo::find_by_id($_GET['id']);
      if(isset($_POST['update'])){
         if($photo) {
-            $_POST['title'];
-            $_POST['caption'];
-            $_POST['description'];
-            $_POST['alternate_text'];
+            $photo->title = $_POST['title'];
+            $photo->caption = $_POST['caption'];
+            $photo->description = $_POST['description'];
+            $photo->alternate_text = $_POST['alternate_text'];
         }   
     }
  }
@@ -46,7 +46,7 @@ if (!$session->is_signed_in()) {
                 <form action="edit_photo.php" method="POST">
                 <div class="col-md-8">
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control" value="<?php echo $photo->title ?>">
                     </div>
                     <div class="form-group">
                         <label for="caption">Caption</label>
