@@ -4,9 +4,24 @@ if (!$session->is_signed_in()) {
     redirect("login.php");
 } ?>
 <?php
- if(isset($_POST['update'])){
-
+ //If dont have an ID redirect
+ if(empty($_GET['id'])){
+    redirect("photos.php");
+ } else {
+     $photo = Photo::find_by_id($_GET['id']);
+     if(isset($_POST['update'])){
+        if($photo) {
+            $_POST['title'];
+            $_POST['caption'];
+            $_POST['description'];
+            $_POST['alternate_text'];
+        }   
+    }
  }
+
+
+ 
+ 
 // $photos = Photo::find_all();
 
 ?>
