@@ -7,16 +7,17 @@ if (!$session->is_signed_in()) {
 //If dont have an ID redirect
 
 // $user = User::find_by_id($_GET['id']);
-// if (isset($_POST['update'])) {
-//     if ($user) {
-//         $user->title = $_POST['title'];
-//         $user->caption = $_POST['caption'];
-//         $user->description = $_POST['description'];
-//         $user->alternate_text = $_POST['alternate_text'];
+if (isset($_POST['create'])) {
+    echo "Hello";
+    // if ($user) {
+    //     $user->title = $_POST['title'];
+    //     $user->caption = $_POST['caption'];
+    //     $user->description = $_POST['description'];
+    //     $user->alternate_text = $_POST['alternate_text'];
 
-//         $user->save();
-//     }
-// }
+    //     $user->save();
+    // }
+}
 
 
 
@@ -43,7 +44,7 @@ if (!$session->is_signed_in()) {
 
                 <!-- Form control -->
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <div class="col-md-8">
+                    <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="username" class="form-control">
@@ -59,6 +60,9 @@ if (!$session->is_signed_in()) {
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="text" name="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="create" class="btn btn-primary pull-right">
                         </div>
                     </div>
                 </form>
