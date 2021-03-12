@@ -6,9 +6,16 @@ if (!$session->is_signed_in()) {
 <?php
 //If dont have an ID redirect
 
-// $user = User::find_by_id($_GET['id']);
+$user = new User();
 if (isset($_POST['create'])) {
-    echo "Hello";
+    
+    if($user){
+        $user->username = $_POST['username'];
+        $user->first_name = $_POST['first_name'];
+        $user->last_name = $_POST['last_name'];
+        $user->password = $_POST['password'];
+
+    }
     // if ($user) {
     //     $user->title = $_POST['title'];
     //     $user->caption = $_POST['caption'];
@@ -18,11 +25,6 @@ if (isset($_POST['create'])) {
     //     $user->save();
     // }
 }
-
-
-
-
-// $users = user::find_all();
 
 ?>
 
@@ -45,6 +47,9 @@ if (isset($_POST['create'])) {
                 <!-- Form control -->
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <input type="file" name="user_image">
+                        </div>
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="username" class="form-control">
