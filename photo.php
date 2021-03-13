@@ -19,8 +19,15 @@ if(isset($_POST['submit'])){
     if($new_comment){
         $new_comment->save();
         redirect("photo.php?id={$photo->id}");
+    } else {
+        $message = "There was some problem";
     }
+} else {
+    $author = "";
+    $body = "";
 }
+
+Comment::find_the_comments($photo->id);
 
 
 
