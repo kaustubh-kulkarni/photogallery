@@ -10,7 +10,16 @@ $photo = Photo::find_by_id($_GET['id']);
 echo $photo->title;
 
 if(isset($_POST['submit'])){
-    echo "It works";
+    //Get values from form
+    $author = trim($_POST['author']);
+    $body = trim($_POST['body']);
+
+    $new_comment = Comment::create_comment($photo->id, $author, $body);
+
+    if($new_comment){
+        $new_comment->save();
+        redirect("photo.php?id={$photo->id}");
+    }
 }
 
 
