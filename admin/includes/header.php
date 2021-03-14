@@ -31,6 +31,8 @@
     <![endif]-->
     <!-- Custom stylessheet -->
     <link href="css/styles.css" rel="stylesheet">
+    <!-- Google chart API -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 
