@@ -33,6 +33,7 @@ $comments = Comment::find_the_comments($photo->id);
 
 
 
+
 ?>
 
 
