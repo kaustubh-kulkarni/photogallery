@@ -35,6 +35,7 @@ $comments = Comment::find_the_comments($photo->id);
 
 ?>
 
+<div class="row">
 
 <div class="col-lg-12">
 
@@ -110,4 +111,5 @@ $comments = Comment::find_the_comments($photo->id);
     <?php// include("includes/sidebar.php"); ?>
 <!-- </div> -->
 <!-- /.row -->
+</div>
 <?php include("includes/footer.php"); ?>
