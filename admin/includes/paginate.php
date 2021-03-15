@@ -12,6 +12,21 @@ class Paginate {
         $this->items_per_page = (int)$items_per_page;
         $this->items_total_count = (int)$items_total_count;
     }
+    //Next page function
+    public function next() {
+        return $this->current_page + 1;
+    }
+
+    //Prev page function
+    public function previous(){
+        return $this->current_page - 1;
+    }
+
+    //Find total pages
+    public function page_total(){
+        //Ceil function to round up the division
+        return ceil($this->items_total_count/$this->items_per_page);
+    }
 
 
 }
