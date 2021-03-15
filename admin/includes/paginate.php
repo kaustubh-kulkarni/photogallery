@@ -41,7 +41,6 @@ class Paginate {
         return ($this->current_page - 1) * $this->items_per_page;
     }
 
-
 }
 
 
