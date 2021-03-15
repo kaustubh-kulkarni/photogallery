@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Upload
-                    <small>Subheading</small>
+                    <small></small>
                 </h1>
                 
                 <!-- Form to POST or upload photos -->
