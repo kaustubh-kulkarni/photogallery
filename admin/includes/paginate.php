@@ -27,6 +27,19 @@ class Paginate {
         //Ceil function to round up the division
         return ceil($this->items_total_count/$this->items_per_page);
     }
+    //Limit prev below 0
+    public function has_previous(){
+        return $this->previous() >= 1 ? true : false;
+    }
+    //Limit next above total
+    public function has_next(){
+        return $this->next() <= $this->page_total() ? true : false;
+    }
+
+    //Offset to show range of pages
+    public function offset() {
+        return ($this->current_page - 1) * $this->items_per_page;
+    }
 
 
 }
