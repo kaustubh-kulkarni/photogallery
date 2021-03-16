@@ -57,6 +57,13 @@ class User extends Db_object {
     public function image_path_and_placeholder(){
         return empty($this->user_image) ? $this->image_placeholder : $this->upload_directory.DS.$this->user_image;
     }
+    //AJAX method to save and update data
+    public function ajax_save_user_image($user_image, $user_id){
+        $this->user_image = $user_image;
+        $this->id = $user_id;
+        $this->save();
+
+    }
 
     
    
