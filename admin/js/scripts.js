@@ -64,6 +64,11 @@ $(document).ready(function() {
         $("#toggle").toggleClass("glyphicon-menu-down glyphicon, glyphicon-menu-up glyphicon");
     });
 
+    //Delete button confirmation
+    $(".delete_link").click(function() {
+        return confirm("Are you sure want to delete this?");
+    });
+
     //Text editor
     tinymce.init({
         selector: 'textarea'
