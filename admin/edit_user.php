@@ -8,7 +8,7 @@ if (!$session->is_signed_in()) {
 <?php
 //If dont have an ID redirect
 if (empty($_GET['id'])) {
-    redirect("photos.php");
+    redirect("users.php");
 }
 
 $user = User::find_by_id($_GET['id']);
@@ -22,12 +22,15 @@ if (isset($_POST['update'])) {
 
         if(empty($_FILES['user_image'])) {
             $user->save();
+            redirect("users.php");
+            $session->message("The user has been updated");
         } else {
             $user->set_file($_FILES['user_image']);
             $user->upload_photo();
             $user->save();
+            $session->message("The user has been updated");
 
-            redirect("edit_user.php?id={$user->id}");
+            redirect("users.php");
         } 
         
     }
@@ -55,7 +58,7 @@ if (isset($_POST['update'])) {
                     <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->image_path_and_placeholder();?>" alt=""></a>
                 </div>
                 <!-- Form control -->
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="file" name="user_image">

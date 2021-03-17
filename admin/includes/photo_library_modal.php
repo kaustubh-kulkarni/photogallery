@@ -16,9 +16,9 @@
              <div class="thumbnails row">
             
                 <!-- PHP LOOP HERE CODE HERE-->
-                <?php foreach ($photos as $photo) : ?> 
+                <?php foreach ($photos as $photo): ?> 
                <div class="col-xs-2">
-                 <a role="checkbox" aria-checked="false" tabindex="0" href="#" class="thumbnail">
+                 <a href="#" role="checkbox" aria-checked="false" tabindex="0" id="" class="thumbnail">
                    <img class="modal_thumbnails img-responsive" src="<?php echo $photo->picture_path(); ?>" data="<?php echo $photo->id; ?>">
                  </a>
                   <div class="photo-id hidden"></div>

@@ -69,9 +69,9 @@ class Db_object {
     }
     //Check properties of objects
     private function has_the_attribute($the_attribute){
-        $object_properties = get_object_vars($this);
+        //$object_properties = get_object_vars($this);
         // Check whether attribute exists in output array
-        return array_key_exists($the_attribute, $object_properties);
+        return property_exists($this, $the_attribute);
     }
 
     protected function properties(){
