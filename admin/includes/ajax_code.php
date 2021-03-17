@@ -6,7 +6,7 @@ if(isset($_POST['image_name'])){
 }
 
 if(isset($_POST['photo_id'])) {
-  echo "It works";
+  Photo::display_sidebar_data($_POST['photo_id']);
   }
 
 ?>
