@@ -9,7 +9,8 @@
 
     <!-- Tiny MCE WYSIWYG editor -->
     <script src="http://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
+    <!-- Dropzone JS -->
+    <script src="js/dropzone.js"></script>
     <!-- Custom JS -->
     <script src="js/scripts.js"></script>
     <!-- Google chart Script -->
