@@ -38,6 +38,8 @@ if(isset($_POST['submit'])){
                 </h1>
                 
                 <!-- Form to POST or upload photos -->
+                <div class="row">
+                
                 <div class="col-md-6">
                 <?php echo $message ?>
                 <form action="upload.php" method="POST" enctype="multipart/form-data">
@@ -51,6 +53,12 @@ if(isset($_POST['submit'])){
                 <input type="submit" name="submit">
         
                 </form>
+                </div>
+                </div> <!-- End of Row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="upload" class="dropzone"></form>
+                    </div>
                 </div>
 
 
