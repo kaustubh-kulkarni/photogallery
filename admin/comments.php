@@ -24,6 +24,7 @@ $comments = Comment::find_all();
                 <h1 class="page-header">
                     Comments
                 </h1>
+                <p class="bg-success"><?php echo $message; ?></p>
 
                 <!-- Table for uploaded images -->
                 <div class="col-md-12">

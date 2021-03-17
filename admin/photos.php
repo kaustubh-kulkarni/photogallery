@@ -21,8 +21,9 @@ $photos = Photo::find_all();
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Photos
-                    <small>Subheading</small>
+                    <small></small>
                 </h1>
+                <p class="bg-success"><?php echo $message; ?></p>
                 <!-- Table for uploaded images -->
                 <div class="col-md-12">
                     <table class="table table-hover">
