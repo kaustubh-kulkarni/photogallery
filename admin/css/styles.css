@@ -71,3 +71,10 @@
 #modal_sidebar {
     position: fixed !important;
 }
+
+
+/* Login styles */
+
+#login-id label {
+    color: white;
+}
