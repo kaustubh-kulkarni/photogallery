@@ -1,5 +1,5 @@
-<?php require("init.php"); ?>
-<?php
+<?php require("init.php");
+
 $user = new User();
 if(isset($_POST['image_name'])){
 

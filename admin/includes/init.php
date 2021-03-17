@@ -1,4 +1,5 @@
 <?php
+
 //forward or backword slash (DIrectory separator) C:\xampp\htdocs\gallery
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 //Path to our project file
